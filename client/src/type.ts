@@ -1,4 +1,4 @@
-type ConnectorType = {
+export type ConnectorType = {
   id: number;
   label: string;
   status: string;
@@ -6,7 +6,7 @@ type ConnectorType = {
 
 export type ConnectorListType = ConnectorType[];
 
-type ColorType = {
+export type ColorType = {
   id: number;
   label: string;
   hex_color_code: string;

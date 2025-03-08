@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import { ColorListType, ConnectorListType } from "./type";
+import { ColorListType, ColorType, ConnectorListType } from "./type";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
         <>
           <Autocomplete
             id="connector"
-            options={connectorList}
-            getOptionLabel={(option) => option.label}
+            options={connectorList as ColorType[]}
+            getOptionLabel={(option: ColorType) => option.label}
             style={{ width: 300 }}
             renderInput={(params) => (
               <TextField {...params} label="Connector" variant="outlined" />
@@ -33,8 +33,8 @@ function App() {
           />
           <Autocomplete
             id="color"
-            options={colorList}
-            getOptionLabel={(option) => option.label}
+            options={colorList as ColorType[]}
+            getOptionLabel={(option: ColorType) => option.label}
             style={{ width: 300 }}
             renderInput={(params) => (
               <TextField {...params} label="Color" variant="outlined" />
@@ -42,7 +42,7 @@ function App() {
           />
         </>
       ) : (
-        <>Loading...</>
+        <div>Loading...</div>
       )}
     </>
   );
